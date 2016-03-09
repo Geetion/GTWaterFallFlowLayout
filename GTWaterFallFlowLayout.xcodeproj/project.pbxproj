@@ -16,6 +16,7 @@
 		C01025051C8FD712000F776C /* GTWaterFallFlowLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01025041C8FD712000F776C /* GTWaterFallFlowLayoutTests.swift */; };
 		C01025101C8FD712000F776C /* GTWaterFallFlowLayoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010250F1C8FD712000F776C /* GTWaterFallFlowLayoutUITests.swift */; };
 		C01025201C8FD77D000F776C /* GTWaterFallFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010251F1C8FD77D000F776C /* GTWaterFallFlowLayout.swift */; };
+		C0A118AC1C90313600DF9881 /* GTWaterFallFlowLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A118AB1C90313600DF9881 /* GTWaterFallFlowLayoutProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C010250F1C8FD712000F776C /* GTWaterFallFlowLayoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTWaterFallFlowLayoutUITests.swift; sourceTree = "<group>"; };
 		C01025111C8FD712000F776C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C010251F1C8FD77D000F776C /* GTWaterFallFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GTWaterFallFlowLayout.swift; path = Util/GTWaterFallFlowLayout.swift; sourceTree = "<group>"; };
+		C0A118AB1C90313600DF9881 /* GTWaterFallFlowLayoutProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GTWaterFallFlowLayoutProtocol.swift; sourceTree = "<group>"; };
 		C70E69ABCF51E99907070BF1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0197A43EE0D737D9029986 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C010251F1C8FD77D000F776C /* GTWaterFallFlowLayout.swift */,
+				C0A118AB1C90313600DF9881 /* GTWaterFallFlowLayoutProtocol.swift */,
 				C01024EE1C8FD711000F776C /* GTWaterFallFlowLayout */,
 				C01025031C8FD712000F776C /* GTWaterFallFlowLayoutTests */,
 				C010250E1C8FD712000F776C /* GTWaterFallFlowLayoutUITests */,
@@ -337,6 +340,7 @@
 				C01025201C8FD77D000F776C /* GTWaterFallFlowLayout.swift in Sources */,
 				C01024F21C8FD711000F776C /* ViewController.swift in Sources */,
 				C01024F01C8FD711000F776C /* AppDelegate.swift in Sources */,
+				C0A118AC1C90313600DF9881 /* GTWaterFallFlowLayoutProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
