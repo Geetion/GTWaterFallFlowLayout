@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25D49624CB93AA764E905BBB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70E69ABCF51E99907070BF1 /* Pods.framework */; };
 		C01024F01C8FD711000F776C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01024EF1C8FD711000F776C /* AppDelegate.swift */; };
 		C01024F21C8FD711000F776C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01024F11C8FD711000F776C /* ViewController.swift */; };
 		C01024F51C8FD711000F776C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01024F31C8FD711000F776C /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		C01024FA1C8FD711000F776C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01024F81C8FD711000F776C /* LaunchScreen.storyboard */; };
 		C01025051C8FD712000F776C /* GTWaterFallFlowLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01025041C8FD712000F776C /* GTWaterFallFlowLayoutTests.swift */; };
 		C01025101C8FD712000F776C /* GTWaterFallFlowLayoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010250F1C8FD712000F776C /* GTWaterFallFlowLayoutUITests.swift */; };
+		C01025201C8FD77D000F776C /* GTWaterFallFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010251F1C8FD77D000F776C /* GTWaterFallFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B57815FE4EE9432642A0730 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C01024EC1C8FD711000F776C /* GTWaterFallFlowLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GTWaterFallFlowLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01024EF1C8FD711000F776C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C01024F11C8FD711000F776C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		C010250B1C8FD712000F776C /* GTWaterFallFlowLayoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GTWaterFallFlowLayoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C010250F1C8FD712000F776C /* GTWaterFallFlowLayoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTWaterFallFlowLayoutUITests.swift; sourceTree = "<group>"; };
 		C01025111C8FD712000F776C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C010251F1C8FD77D000F776C /* GTWaterFallFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GTWaterFallFlowLayout.swift; path = Util/GTWaterFallFlowLayout.swift; sourceTree = "<group>"; };
+		C70E69ABCF51E99907070BF1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0197A43EE0D737D9029986 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D49624CB93AA764E905BBB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +81,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C4209DD8DE772A84BD9DFFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C70E69ABCF51E99907070BF1 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77C030A95006A476C257B481 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB0197A43EE0D737D9029986 /* Pods.debug.xcconfig */,
+				6B57815FE4EE9432642A0730 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C01024E31C8FD711000F776C = {
 			isa = PBXGroup;
 			children = (
+				C010251F1C8FD77D000F776C /* GTWaterFallFlowLayout.swift */,
 				C01024EE1C8FD711000F776C /* GTWaterFallFlowLayout */,
 				C01025031C8FD712000F776C /* GTWaterFallFlowLayoutTests */,
 				C010250E1C8FD712000F776C /* GTWaterFallFlowLayoutUITests */,
 				C01024ED1C8FD711000F776C /* Products */,
+				77C030A95006A476C257B481 /* Pods */,
+				3C4209DD8DE772A84BD9DFFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01025141C8FD712000F776C /* Build configuration list for PBXNativeTarget "GTWaterFallFlowLayout" */;
 			buildPhases = (
+				11378242F21E8C3E38DD1BB5 /* Check Pods Manifest.lock */,
 				C01024E81C8FD711000F776C /* Sources */,
 				C01024E91C8FD711000F776C /* Frameworks */,
 				C01024EA1C8FD711000F776C /* Resources */,
+				0E7064D81DCE7C1353600C14 /* Embed Pods Frameworks */,
+				6A7B2C447E2F108BBD13012E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,11 +281,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E7064D81DCE7C1353600C14 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		11378242F21E8C3E38DD1BB5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6A7B2C447E2F108BBD13012E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C01024E81C8FD711000F776C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01025201C8FD77D000F776C /* GTWaterFallFlowLayout.swift in Sources */,
 				C01024F21C8FD711000F776C /* ViewController.swift in Sources */,
 				C01024F01C8FD711000F776C /* AppDelegate.swift in Sources */,
 			);
@@ -397,6 +476,7 @@
 		};
 		C01025151C8FD712000F776C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB0197A43EE0D737D9029986 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GTWaterFallFlowLayout/Info.plist;
@@ -408,6 +488,7 @@
 		};
 		C01025161C8FD712000F776C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B57815FE4EE9432642A0730 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GTWaterFallFlowLayout/Info.plist;
@@ -484,6 +565,7 @@
 				C01025161C8FD712000F776C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C01025171C8FD712000F776C /* Build configuration list for PBXNativeTarget "GTWaterFallFlowLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +574,7 @@
 				C01025191C8FD712000F776C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C010251A1C8FD712000F776C /* Build configuration list for PBXNativeTarget "GTWaterFallFlowLayoutUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +583,7 @@
 				C010251C1C8FD712000F776C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
