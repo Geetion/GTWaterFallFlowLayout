@@ -22,7 +22,6 @@ class WaterFallFlowLayout: UIView{
     
     private var cell_Y = [CGFloat]()
     
-    
     private var scrollView = UIScrollView()
     
     private var itemNumber = Int()

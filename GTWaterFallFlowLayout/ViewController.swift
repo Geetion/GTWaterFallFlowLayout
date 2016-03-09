@@ -125,7 +125,7 @@ class ViewController: UIViewController,WaterFallFlowLayoutDelegate,WaterFallFlow
     }
     
     func waterFallFlowLayout(numberOfColumnInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func waterFallFlowLayout(insetForSectionOfIndex section: Int) -> EdgeSpace {
