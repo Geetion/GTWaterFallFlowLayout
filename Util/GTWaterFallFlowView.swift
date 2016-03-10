@@ -8,11 +8,10 @@
 
 import UIKit
 
-class WaterFallFlowLayout: UIView{
+class WaterFallFlowView: UIView,UIScrollViewDelegate,UITableViewDelegate{
+    var dataSource:WaterFallFlowViewDatasource?
     
-    var dataSource:WaterFallFlowLayoutDatasource?
-    
-    var delegate:WaterFallFlowLayoutDelegate?
+    var delegate:WaterFallFlowViewDelegate?
     
     private var WIDTH:CGFloat?
     
@@ -22,12 +21,15 @@ class WaterFallFlowLayout: UIView{
     
     private var cell_Y = [CGFloat]()
     
-    
     private var scrollView = UIScrollView()
     
     private var itemNumber = Int()
     
+    private var cellOrigin = [CGRect]()
+    
     private var edgeSpace:EdgeSpace?
+    
+    private var beginNumber = 0
     
     func initWithFrameRect(frame:CGRect){
         
@@ -38,6 +40,7 @@ class WaterFallFlowLayout: UIView{
         scrollView = UIScrollView(frame: frame)
         scrollView.scrollEnabled = true
         scrollView.bounces = true
+        scrollView.delegate = self
         
         WIDTH = self.frame.width
         
@@ -66,13 +69,13 @@ class WaterFallFlowLayout: UIView{
     func resetData(){
         if(dataSource != nil ){
             
-            itemNumber = (dataSource?.waterFallFlowLayout(numberOfItemsInSection: 0))!
+            itemNumber = (dataSource?.waterFallFlowView(numberOfItemsInSection: 0))!
             
-            if let newCol = dataSource?.waterFallFlowLayout(numberOfColumnInSection: 0){
+            if let newCol = dataSource?.waterFallFlowView(numberOfColumnInSection: 0){
                 col = newCol
             }
             
-            if let newEdgeSpace = dataSource?.waterFallFlowLayout(insetForSectionOfIndex: 0){
+            if let newEdgeSpace = dataSource?.waterFallFlowView(insetForSectionOfIndex: 0){
                 edgeSpace = newEdgeSpace
             }
             
@@ -82,11 +85,11 @@ class WaterFallFlowLayout: UIView{
     
     func layoutView(){
         
-        for (var i = 0;i<itemNumber;i++){
+        for (var i = beginNumber;i<itemNumber;i++){
             
             let indexPath = NSIndexPath(forRow: i, inSection: 0)
             
-            let imageView = dataSource?.waterFallFlowLayout(viewAtIndexPath: indexPath)
+            let imageView = dataSource?.waterFallFlowView(viewAtIndexPath: indexPath)
             
             imageView!.frame.size = sizeForItemAtIndexPath(i)
             
@@ -94,10 +97,12 @@ class WaterFallFlowLayout: UIView{
             
             imageView!.frame.origin = CGPoint(x: cell_X[currentCol], y: cell_Y[currentCol])
             
+            cellOrigin.append(imageView!.frame)
             
             cell_Y[currentCol] = cell_Y[currentCol] + imageView!.frame.height + (edgeSpace?.vertical)!
             
-            imageView!.tag = i
+            
+            imageView!.tag = i + 1
             
             let touch = UITapGestureRecognizer(target: self, action: "didSelectImageView:")
             
@@ -106,6 +111,8 @@ class WaterFallFlowLayout: UIView{
             
             self.scrollView.addSubview(imageView!)
         }
+        
+        beginNumber = itemNumber
         
         let maxHeight = getViewHeight()
         
@@ -132,7 +139,7 @@ class WaterFallFlowLayout: UIView{
         
         let newWidth = (WIDTH! - CGFloat(col + 1) * (edgeSpace?.horizontal)! )/CGFloat(col)
         
-        let newHeight = dataSource?.waterFallFlowLayout(heightofItemAtIndexPath: newindexPath, itemWidth: newWidth)
+        let newHeight = dataSource?.waterFallFlowView(heightofItemAtIndexPath: newindexPath, itemWidth: newWidth)
         
         return CGSize(width: newWidth, height: newHeight!)
     }
@@ -141,6 +148,30 @@ class WaterFallFlowLayout: UIView{
         
         let indexPath = NSIndexPath(forRow: tap.view!.tag, inSection: 0)
         
-        delegate?.waterFallFlowLayout(didselectImageView: indexPath)
+        delegate?.waterFallFlowView!(didselectImageView: indexPath)
     }
+    
+    func checkItemVisible(){
+        
+        for (var i = 1;i<=itemNumber;i++){
+            
+            let view = self.viewWithTag(i)
+            let lastView = self.viewWithTag(i - col)
+            
+//            print(view?.frame.origin.y)
+//            print(lastView?.frame.origin.y)
+//            if( view?.frame.origin.y > scrollView.contentOffset.y){
+//                lastView?.alpha = 0
+//            }else{
+//                lastView?.alpha = 1
+//            }
+        }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView){
+        checkItemVisible()
+//        print(scrollView.contentOffset.y)
+        delegate?.waterFallFlowViewDidScroll?(scrollView)
+    }
+    
 }
